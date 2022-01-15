@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Passion+One);
+
+body, p{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h1, strong, .read-more{
+    color: #0D4F8B;
+}
+
+hr{
+    margin-top: 0px;
+}
+
+.section-title{
+    margin-bottom: 1px;
+}
+
+.main-header{
+    padding: 0px 0px 15px 0px;
+}
+
+.jumbotron{
+    background-color: #2d84c7;
+    color: #fff;
+    margin: 0px;
+    font-family: 'Passion One', cursive;
+}
+
+.subheader{
+    font-style: italic !important;
+}
+
+.no-margin-bottom{
+    margin-bottom: 0px;
+}
+
+.wrapper-header, .footer{
+    background-color: #0D4F8B;
+    color: #fff;
+    width: 100%;
+}
+
+.tab-active>a:link{
+    background-color: #1874CD;
+}
+
+.section-background{
+    color: #000;
+    padding-left: 5px;
+}
+
+.main-background{
+    background-color: #0D4F8B;
+    border: 0px;
+}
+
+.white-color{
+    color: #FFF !important;
+}
+
+.section-title{
+    margin-bottom: 1px;
+    color: #0D4F8B;
+}
+
+.social-network>li>a>img{
+    margin-right: 2px;
+    width: 20px;
+}
+
+.social-network a:link{
+    padding: 1px 1px;
+}
+
+.block{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+.conferences{
+    color: #fff;
+    background-color: #2d84c7;
+}
+
+.conferences h3{
+    color: #fff;
+}
+
+.conferences strong{
+    color: #fff;
+    font-weight: 400;
+}
+
+.block h4{
+    color: #FFF;
+    text-align: center;
+    margin: 0px;
+    padding: 4px;
+}
+
+.section-title-background{
+    background-color: #0D4F8B;
+}
+
+.section-background li{
+    padding: 2px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.white-color a{
+    color: white !important;
+}
+
+.toolbox-list li{
+    background-color: #0D4F8B;
+    display: inline-block;
+    padding: 2px;
+    color: white;
+    margin: 2px; 0px;
+}
+
+.toolbox-list{
+    padding: 0px;
+}
+
+.footer{
+    margin: 0px;
+    padding: 25px 10px;
+    text-align: center;
+}
+
+.footer strong{
+    color: #fff;
+}
+
+.thumbnail{
+    text-align: left;
+}
+
+.read-more{
+    font-weight: bold;
+}
