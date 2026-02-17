@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Antonio Martín Romero — Python Developer, Django specialist, Linux user since 2007.">
+  <title>Antonio Martín — Python Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Oxanium:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .hero-portrait {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .portrait-frame {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid var(--term-green);
+      box-shadow: 0 0 0 4px rgba(63,201,126,0.08), 0 0 30px rgba(63,201,126,0.18);
+      flex-shrink: 0;
+    }
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(20%) contrast(1.05);
+      transition: filter 0.4s ease;
+    }
+    .portrait-frame:hover img { filter: grayscale(0%); }
+    .portrait-scan {
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, transparent 0px, transparent 2px, rgba(0,0,0,0.1) 2px, rgba(0,0,0,0.1) 4px);
+      pointer-events: none;
+    }
+    .portrait-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-portrait { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- CRT overlay -->
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav-brand">
+      <span class="nav-prompt">antonio@linux</span><span class="nav-sep">:</span><span class="nav-path">~</span><span class="nav-cursor" aria-hidden="true"></span>
+    </div>
+    <div class="nav-links">
+      <a href="#sobre" class="nav-link"><span class="nav-link-num">01</span> ./sobre</a>
+      <a href="#stack" class="nav-link"><span class="nav-link-num">02</span> ./stack</a>
+      <a href="#experiencia" class="nav-link"><span class="nav-link-num">03</span> ./experiencia</a>
+      <a href="#contacto" class="nav-link"><span class="nav-link-num">04</span> ./contacto</a>
+    </div>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#sobre" class="mobile-link">./sobre</a>
+    <a href="#stack" class="mobile-link">./stack</a>
+    <a href="#experiencia" class="mobile-link">./experiencia</a>
+    <a href="#contacto" class="mobile-link">./contacto</a>
+  </div>
+
+  <!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
+  <section class="hero" id="inicio">
+    <div class="hero-layout">
+    <div class="terminal-window">
+
+      <!-- Window chrome -->
+      <div class="terminal-chrome">
+        <div class="terminal-dots">
+          <span class="tdot tdot-red"></span>
+          <span class="tdot tdot-yellow"></span>
+          <span class="tdot tdot-green"></span>
+        </div>
+        <span class="terminal-title">antonio@linux: ~</span>
+        <span class="terminal-tag">bash</span>
+      </div>
+
+      <!-- Terminal body -->
+      <div class="terminal-body">
+
+        <div class="t-line" id="h-line1">
+          <span class="t-prompt">antonio<span class="t-at">@</span>linux<span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span></span>
+          <span class="t-cmd"> whoami</span>
+        </div>
+
+        <div class="hero-name" id="hero-name">
+          <div class="hero-line1">ANTONIO</div>
+          <div class="hero-line2">MARTÍN<span class="hero-dot">_</span></div>
+        </div>
+
+        <div class="t-line reveal" id="h-line2">
+          <span class="t-prompt">antonio<span class="t-at">@</span>linux<span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span></span>
+          <span class="t-cmd"> cat .profile</span>
+        </div>
+
+        <div class="t-output reveal" id="h-output">
+          <div class="t-out-line">
+            <span class="sh-key">export</span> <span class="sh-var">ROLE</span><span class="sh-op">=</span><span class="sh-str">"Senior IT Officer &amp; Python Developer"</span>
+          </div>
+          <div class="t-out-line">
+            <span class="sh-key">export</span> <span class="sh-var">LOCATION</span><span class="sh-op">=</span><span class="sh-str">"Jerez de la Frontera, España"</span>
+          </div>
+          <div class="t-out-line">
+            <span class="sh-key">export</span> <span class="sh-var">CODING_SINCE</span><span class="sh-op">=</span><span class="sh-num">2010</span>
+          </div>
+          <div class="t-out-line">
+            <span class="sh-key">export</span> <span class="sh-var">LINUX_SINCE</span><span class="sh-op">=</span><span class="sh-num">2007</span>
+          </div>
+          <div class="t-out-line">
+            <span class="sh-key">export</span> <span class="sh-var">STATUS</span><span class="sh-op">=</span><span class="sh-str available">"● DISPONIBLE PARA COLABORAR"</span>
+          </div>
+        </div>
+
+        <div class="t-line t-active reveal" id="h-cursor">
+          <span class="t-prompt">antonio<span class="t-at">@</span>linux<span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span></span>
+          <span class="t-block-cursor" aria-hidden="true">&nbsp;</span>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero-portrait">
+      <div class="portrait-frame">
+        <img src="images/antonio-profile.png" alt="Antonio Martín Romero" width="600" height="600">
+        <div class="portrait-scan" aria-hidden="true"></div>
+      </div>
+      <span class="portrait-label">antonio-profile.png</span>
+    </div>
+    </div><!-- /hero-layout -->
+
+    <div class="hero-meta">
+      <div class="hero-badges">
+        <span class="badge badge-python">🐍 Python</span>
+        <span class="badge badge-django">🟢 Django</span>
+        <span class="badge badge-linux">🐧 Linux</span>
+        <span class="badge badge-sec">🔐 Hacking Ético</span>
+      </div>
+      <a href="#contacto" class="hero-cta">
+        <span>Contactar</span>
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+      <span class="scroll-label">scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ ABOUT ═══════════════════════════════════ -->
+  <section class="section about-section" id="sobre">
+    <div class="section-header reveal">
+      <span class="section-num">// 01</span>
+      <div class="section-cmd">
+        <span class="t-dollar">$</span> cat antonio_martin.py
+      </div>
+    </div>
+
+    <div class="code-editor reveal">
+      <div class="editor-chrome">
+        <span class="editor-file">🐍 antonio_martin.py</span>
+        <span class="editor-lang">Python</span>
+      </div>
+      <div class="code-body">
+        <div class="code-lines" aria-hidden="true">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+          <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+          <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span>
+          <span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+          <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span>
+        </div>
+        <div class="code-content">
+          <div class="cl"><span class="py-kw">class</span> <span class="py-class">AntonioMartin</span><span class="py-punc">:</span></div>
+          <div class="cl py-i1"><span class="py-doc">"""</span></div>
+          <div class="cl py-i1"><span class="py-doc">Desarrollador Python y Django desde 2010.</span></div>
+          <div class="cl py-i1"><span class="py-doc">Mi trabajo es ~90% backend: APIs REST,</span></div>
+          <div class="cl py-i1"><span class="py-doc">bases de datos y administración de servidores</span></div>
+          <div class="cl py-i1"><span class="py-doc">Linux. Usuario de GNU/Linux desde 2007.</span></div>
+          <div class="cl py-i1"><span class="py-doc">"""</span></div>
+          <div class="cl">&nbsp;</div>
+          <div class="cl py-i1"><span class="py-attr">name</span> <span class="py-op">=</span> <span class="py-str">"Antonio Martín Romero"</span></div>
+          <div class="cl py-i1"><span class="py-attr">location</span> <span class="py-op">=</span> <span class="py-str">"Jerez de la Frontera, España"</span></div>
+          <div class="cl py-i1"><span class="py-attr">employer</span> <span class="py-op">=</span> <span class="py-str">"Ayuntamiento de Jerez"</span></div>
+          <div class="cl py-i1"><span class="py-attr">languages</span> <span class="py-op">=</span> <span class="py-bk">[</span><span class="py-str">"Python"</span><span class="py-punc">, </span><span class="py-str">"Bash"</span><span class="py-punc">, </span><span class="py-str">"JavaScript"</span><span class="py-bk">]</span></div>
+          <div class="cl py-i1"><span class="py-attr">interests</span> <span class="py-op">=</span> <span class="py-bk">[</span><span class="py-str">"Hacking Ético"</span><span class="py-punc">, </span><span class="py-str">"Ciberseguridad"</span><span class="py-bk">]</span></div>
+          <div class="cl py-i1"><span class="py-attr">frameworks</span> <span class="py-op">=</span> <span class="py-bk">[</span><span class="py-str">"Django"</span><span class="py-punc">, </span><span class="py-str">"DRF"</span><span class="py-punc">, </span><span class="py-str">"Ionic"</span><span class="py-punc">, </span><span class="py-str">"AngularJS"</span><span class="py-bk">]</span></div>
+          <div class="cl py-i1"><span class="py-attr">databases</span> <span class="py-op">=</span> <span class="py-bk">[</span><span class="py-str">"PostgreSQL"</span><span class="py-punc">, </span><span class="py-str">"MySQL"</span><span class="py-bk">]</span></div>
+          <div class="cl py-i1"><span class="py-attr">os_since</span> <span class="py-op">=</span> <span class="py-str">"Linux"</span> <span class="py-comment"># desde 2007, Debian-based</span></div>
+          <div class="cl py-i1"><span class="py-attr">conferences</span> <span class="py-op">=</span> <span class="py-bk">[</span><span class="py-str">"EuroPython"</span><span class="py-punc">, </span><span class="py-str">"PyConES"</span><span class="py-bk">]</span></div>
+          <div class="cl">&nbsp;</div>
+          <div class="cl py-i1"><span class="py-comment"># Fuera del trabajo:</span></div>
+          <div class="cl py-i1"><span class="py-attr">marathon_pb</span> <span class="py-op">=</span> <span class="py-str">"2:24:00"</span> <span class="py-comment"># ~100 millas/semana</span></div>
+          <div class="cl py-i1"><span class="py-attr">hobbies</span> <span class="py-op">=</span> <span class="py-bk">[</span><span class="py-str">"running"</span><span class="py-punc">, </span><span class="py-str">"fútbol"</span><span class="py-punc">, </span><span class="py-str">"open source"</span><span class="py-bk">]</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-stats reveal">
+      <div class="stat-card">
+        <div class="stat-val">14+</div>
+        <div class="stat-key">años<br>programando</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">17+</div>
+        <div class="stat-key">años<br>en Linux</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">~90%</div>
+        <div class="stat-key">trabajo<br>backend</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val">2:24</div>
+        <div class="stat-key">personal best<br>maratón</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ STACK ═══════════════════════════════════ -->
+  <section class="section stack-section" id="stack">
+    <div class="section-header reveal">
+      <span class="section-num">// 02</span>
+      <div class="section-cmd">
+        <span class="t-dollar">$</span> pip list --format=columns
+      </div>
+    </div>
+
+    <div class="pip-table reveal">
+      <div class="pip-head">
+        <span>Package</span>
+        <span>Version</span>
+        <span class="pip-desc-col">Uso</span>
+      </div>
+      <div class="pip-divider">──────────────────────────────────────────────────────────────</div>
+
+      <div class="pip-row pip-featured">
+        <span class="pip-pkg">Django</span>
+        <span class="pip-ver">4.2 LTS</span>
+        <span class="pip-desc">Framework web principal</span>
+      </div>
+      <div class="pip-row pip-featured">
+        <span class="pip-pkg">Python</span>
+        <span class="pip-ver">3.12</span>
+        <span class="pip-desc">Lenguaje principal</span>
+      </div>
+      <div class="pip-row">
+        <span class="pip-pkg">djangorestframework</span>
+        <span class="pip-ver">3.14</span>
+        <span class="pip-desc">APIs REST</span>
+      </div>
+      <div class="pip-row">
+        <span class="pip-pkg">PostgreSQL</span>
+        <span class="pip-ver">15</span>
+        <span class="pip-desc">Base de datos relacional</span>
+      </div>
+      <div class="pip-row pip-featured">
+        <span class="pip-pkg">Hacking Ético</span>
+        <span class="pip-ver">—</span>
+        <span class="pip-desc">Pentesting, análisis de vulnerabilidades</span>
+      </div>
+      <div class="pip-row">
+        <span class="pip-pkg">Bash / Shell</span>
+        <span class="pip-ver">5.x</span>
+        <span class="pip-desc">Scripting y automatización</span>
+      </div>
+      <div class="pip-row">
+        <span class="pip-pkg">Linux (Debian/Ubuntu)</span>
+        <span class="pip-ver">Kernel 6.x</span>
+        <span class="pip-desc">SO principal desde 2007</span>
+      </div>
+      <div class="pip-row">
+        <span class="pip-pkg">JavaScript / React</span>
+        <span class="pip-ver">ES2024</span>
+        <span class="pip-desc">Frontend cuando hace falta</span>
+      </div>
+      <div class="pip-row">
+        <span class="pip-pkg">PyQT</span>
+        <span class="pip-ver">5.x</span>
+        <span class="pip-desc">Aplicaciones de escritorio</span>
+      </div>
+    </div>
+
+    <div class="uname-block reveal">
+      <div class="section-cmd small">
+        <span class="t-dollar">$</span> uname -a
+      </div>
+      <div class="uname-output">
+        Linux antonio-pc 6.5.0-generic #1 SMP PREEMPT_DYNAMIC x86_64 GNU/Linux<br>
+        <span class="sh-str available">▶ Linux user desde 2007 · Debian-based preferred · Servidor + Desktop</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════════════════════════════════ EXPERIENCIA ═════════════════════════════════ -->
+  <section class="section experience-section" id="experiencia">
+    <div class="section-header reveal">
+      <span class="section-num">// 03</span>
+      <div class="section-cmd">
+        <span class="t-dollar">$</span> git log --oneline --graph --all
+      </div>
+    </div>
+
+    <div class="git-log reveal">
+
+      <div class="git-entry">
+        <div class="git-left">
+          <div class="git-node current-node"></div>
+          <div class="git-connector"></div>
+        </div>
+        <div class="git-right">
+          <div class="git-meta-row">
+            <code class="git-hash">a1b2c3d</code>
+            <span class="git-ref head-ref">HEAD → main</span>
+            <span class="git-date">2024 — presente</span>
+          </div>
+          <div class="git-msg">Senior IT Officer</div>
+          <div class="git-body">Ayuntamiento de Jerez · Smart City e integración de datos.</div>
+        </div>
+      </div>
+
+      <div class="git-entry">
+        <div class="git-left">
+          <div class="git-node"></div>
+          <div class="git-connector"></div>
+        </div>
+        <div class="git-right">
+          <div class="git-meta-row">
+            <code class="git-hash">f4e5d6c</code>
+            <span class="git-date">2013 — 2023</span>
+          </div>
+          <div class="git-msg">Full Stack Developer</div>
+          <div class="git-body">idXtra LTD · 10 años desarrollando con Python y Django. APIs REST, SOAP, WCF. Frontend con Ionic y AngularJS.</div>
+        </div>
+      </div>
+
+      <div class="git-entry">
+        <div class="git-left">
+          <div class="git-node"></div>
+          <div class="git-connector"></div>
+        </div>
+        <div class="git-right">
+          <div class="git-meta-row">
+            <code class="git-hash">9g8h7i6</code>
+            <span class="git-date">2012 — presente</span>
+          </div>
+          <div class="git-msg">Software Engineer</div>
+          <div class="git-body">Evidence Health APP · Desarrollo de software para aplicaciones de salud.</div>
+        </div>
+      </div>
+
+      <div class="git-entry">
+        <div class="git-left">
+          <div class="git-node"></div>
+          <div class="git-connector"></div>
+        </div>
+        <div class="git-right">
+          <div class="git-meta-row">
+            <code class="git-hash">b3c4d5e</code>
+            <span class="git-date">2011 — 2012</span>
+          </div>
+          <div class="git-msg">Software Developer</div>
+          <div class="git-body">CASPE</div>
+        </div>
+      </div>
+
+      <div class="git-entry git-last">
+        <div class="git-left">
+          <div class="git-node origin-node"></div>
+        </div>
+        <div class="git-right">
+          <div class="git-meta-row">
+            <code class="git-hash">0000000</code>
+            <span class="git-ref origin-ref">origin</span>
+            <span class="git-date">2010</span>
+          </div>
+          <div class="git-msg">Initial commit — Primera línea de código Python</div>
+          <div class="git-body">FUECA · Inicio de carrera como desarrollador de software.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Conferences -->
+    <div class="section-cmd small reveal" style="margin-top: 3.5rem; margin-bottom: 1rem;">
+      <span class="t-dollar">$</span> cat conferences.txt
+    </div>
+    <div class="conf-grid reveal">
+      <div class="conf-item">
+        <span class="conf-year">2015</span>
+        <span class="conf-name">PyConES</span>
+        <span class="conf-loc">Madrid</span>
+      </div>
+      <div class="conf-item">
+        <span class="conf-year">2014</span>
+        <span class="conf-name">EuroPython</span>
+        <span class="conf-loc">Berlin</span>
+      </div>
+      <div class="conf-item">
+        <span class="conf-year">2013</span>
+        <span class="conf-name">EuroPython</span>
+        <span class="conf-loc">Florence</span>
+      </div>
+      <div class="conf-item">
+        <span class="conf-year">2013</span>
+        <span class="conf-name">PyConES</span>
+        <span class="conf-loc">Madrid</span>
+      </div>
+      <div class="conf-item">
+        <span class="conf-year">·</span>
+        <span class="conf-name">London Django Group</span>
+        <span class="conf-loc">London</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════ CONTACT ══════════════════════════════════ -->
+  <section class="section contact-section" id="contacto">
+    <div class="section-header reveal">
+      <span class="section-num">// 04</span>
+      <div class="section-cmd">
+        <span class="t-dollar">$</span> ./contacto.sh
+      </div>
+    </div>
+
+    <div class="contact-body reveal">
+      <div class="contact-heading">
+        <span class="contact-tilde">~</span>Hablemos
+      </div>
+
+      <div class="contact-links-block">
+        <a href="https://github.com/grouser" target="_blank" rel="noopener" class="contact-row">
+          <span class="contact-icon">⬡</span>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-arrow">→</span>
+          <span class="contact-val">github.com/grouser</span>
+        </a>
+        <a href="https://linkedin.com/in/antoniomartinromero/" target="_blank" rel="noopener" class="contact-row">
+          <span class="contact-icon">⬡</span>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-arrow">→</span>
+          <span class="contact-val">antoniomartinromero</span>
+        </a>
+      </div>
+
+      <div class="contact-status-block">
+        <span class="status-led"></span>
+        <span class="contact-status-text">Disponible para proyectos open source</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <span class="t-prompt-simple">antonio@linux<span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span></span>
+    </div>
+    <div class="footer-center">
+      Built with <span class="py-str-inline">Python</span> · Powered by <span class="linux-inline">Linux</span> · © 2024
+    </div>
+    <div class="footer-right">
+      <span class="footer-hash">#grouser</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
